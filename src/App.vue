@@ -3,9 +3,9 @@
     <div class="app-header" :class="{'app-header_scroll': headerShadow}">
       <app-header></app-header>
     </div>
-    <div class="app-window">
+    <!-- <div class="app-window">
       <app-window></app-window>
-      </div>
+    </div> -->
     <div class="app-body">
       <router-view/>
     </div>
@@ -17,14 +17,14 @@
 
 <script>
 import AppHeader from '@/components/app/app-header.vue';
-import AppWindow from '@/components/app/app-window.vue';
+// import AppWindow from '@/components/app/app-window.vue';
 import AppFooter from '@/components/app/app-footer.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    AppWindow,
+    // AppWindow,
     AppFooter,
   },
   data() {
@@ -56,8 +56,10 @@ a {
 .app {
   position: relative;
   display: grid;
-  grid-template-areas: "app-header" "app-window" "app-body" "app-footer";
-  grid-template-rows: $headerHeight $windowHeight auto $footerHeight;
+  // grid-template-areas: "app-header" "app-window" "app-body" "app-footer";
+  grid-template-areas: "app-header" "app-body" "app-footer";
+  // grid-template-rows: $headerHeight $windowHeight auto $footerHeight;
+  grid-template-rows: $headerHeight auto $footerHeight;
   grid-template-columns: 100%;
   width: 100%;
   box-sizing: border-box;

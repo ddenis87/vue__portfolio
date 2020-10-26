@@ -1,9 +1,9 @@
 <template>
   <div class="portfolio">
-    <div class="first-small"><img class="first-small__img" src="@/assets/images/project/hostel-min.png" /></div>
-    <div class="second-small"><img class="second-small__img" src="@/assets/images/project/arch-min.png" /></div>
-    <div class="medium"><img class="medium__img" src="@/assets/images/project/tyMarket-min.png" /></div>
-    <div class="large"><img class="large__img" src="@/assets/images/project/psychologist-min.png" /></div>
+    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/hostel-min.png" /></div>
+    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/arch-min.png" /></div>
+    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/tyMarket-min.png" /></div>
+    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/psychologist-min.png" /></div>
   </div>
 </template>
 
@@ -17,35 +17,29 @@ export default {
 @import '~@/variable.scss';
 
 .portfolio {
-  display: grid;
-  grid-template-areas: "first-small medium large"
-                       "second-small medium large";
-  grid-template-rows: auto auto;
-  grid-template-columns: 20% 30% 1fr;
-  max-width: $widthMaxContent;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 850px;
   width: 100%;
-  border: 1px solid black;
-
-  .first-small {
-    grid-area: first-small; 
-    border: 1px solid red;
-    &__img {
-      width: 100%;
+  // border: 1px solid black;
+  &-card {
+    margin: 10px 10px;
+    padding: 0px;
+    max-width: 400px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    overflow-y: hidden;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    transition: .3s;
+    &:hover {
+      padding: 10px;
     }
-  }
-  .second-small { grid-area: second-small; border: 1px solid blue;
-    &__img {
+    &__images {
       width: 100%;
-    }
-  }
-  .medium { grid-area: medium; border: 1px solid green;
-    &__img {
-      width: 100%;
-    }
-  }
-  .large { grid-area: large; border: 1px solid grey;
-    &__img {
-      width: 100%;
+      height: auto;
     }
   }
 }

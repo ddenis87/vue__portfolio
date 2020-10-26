@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+    <div class="app-window">
+      <app-window></app-window>
+    </div>
     <div class="main-flex">
       <div class="main-flex-box main-flex-box_first">
         <h4 class="main-flex-box__title">Обо мне</h4>
@@ -38,12 +41,15 @@
 </template>
 
 <script>
+import AppWindow from '@/components/app/app-window.vue';
 import MainProgress from '@/components/main__progress.vue';
 
 export default {
   name: 'Main',
   components: {
+    AppWindow,
     MainProgress,
+
   },
   computed: {
     listSkils() { return this.$store.getters.GET_LIST_SKILS }
@@ -57,6 +63,9 @@ export default {
 .main {
   max-width: $widthMaxContent;
   width: 100%;
+  .app-window {
+    height: $windowHeight;
+  }
   &-flex {
     display: flex;
     justify-content:space-between;
