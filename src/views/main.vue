@@ -1,7 +1,7 @@
 <template>
   <div class="main" id="page">
-    <div class="app-window">
-      <app-window></app-window>
+    <div class="main__window">
+      <main-window></main-window>
     </div>
     <div class="main-flex">
       <div class="main-flex-box main-flex-box_first">
@@ -41,22 +41,22 @@
 </template>
 
 <script>
-import AppWindow from '@/components/app/app-window.vue';
+import MainWindow from '@/components/main__window.vue';
 import MainProgress from '@/components/main__progress.vue';
 
 export default {
   name: 'Main',
   components: {
-    AppWindow,
+    MainWindow,
     MainProgress,
-
   },
   computed: {
     listSkils() { return this.$store.getters.GET_LIST_SKILS }
   },
-  data() {
-    return {
-      isShow: false,
+  beforeUnmount() { this.goTopPage() },
+  methods: {
+    goTopPage() {
+      window.scrollTo(0,0);
     }
   },
 }
@@ -66,10 +66,11 @@ export default {
 @import '~@/variable.scss';
 
 .main {
+  margin-bottom: 20px;
   max-width: $widthMaxContent;
   width: 100%;
-  transition: all 1s;
-  .app-window {
+  transition: all .5s;
+  &__window {
     height: $windowHeight;
   }
   &-flex {
@@ -132,6 +133,6 @@ export default {
 }
 .fade-enter {
   opacity: 0;
-  transition: all 1s;
+  // transition: all 1s;
 }
 </style>

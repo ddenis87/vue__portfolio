@@ -23,7 +23,7 @@ export default {
       document.getElementById('page').classList.add('fade-enter');
       setTimeout(() => {
         this.$router.push(valueRouter);
-      }, 300);
+      }, 500);
     }
   }
 }

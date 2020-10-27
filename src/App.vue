@@ -2,10 +2,7 @@
   <div class="app" id="app">
     <div class="app-header" :class="{'app-header_scroll': headerShadow}">
       <app-header></app-header>
-    </div>
-    <!-- <div class="app-window">
-      <app-window></app-window>
-    </div> -->   
+    </div>  
     <div class="app-body">
             <transition name="fade" mode="out-in">
       <router-view></router-view>
@@ -19,14 +16,12 @@
 
 <script>
 import AppHeader from '@/components/app/app-header.vue';
-// import AppWindow from '@/components/app/app-window.vue';
 import AppFooter from '@/components/app/app-footer.vue';
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    // AppWindow,
     AppFooter,
   },
   data() {
@@ -58,9 +53,7 @@ a {
 .app {
   position: relative;
   display: grid;
-  // grid-template-areas: "app-header" "app-window" "app-body" "app-footer";
   grid-template-areas: "app-header" "app-body" "app-footer";
-  // grid-template-rows: $headerHeight $windowHeight auto $footerHeight;
   grid-template-rows: $headerHeight auto $footerHeight;
   grid-template-columns: 100%;
   width: 100%;
@@ -82,7 +75,6 @@ a {
     z-index: 999;
     &_scroll { box-shadow: 0px 5px 20px grey; }
   }
-  &-window { grid-area: app-window; display: flex; justify-content: center; }
   &-body {
     grid-area: app-body; 
     display: flex; 
@@ -92,12 +84,4 @@ a {
   }
   &-footer { grid-area: app-footer; display: flex; justify-content: center; background-color: whitesmoke;}
 }
-// .fade-enter-active, .fade-leave-active {
-//   transition: opacity 1s, transform 1s;
-// }
-// .fade-enter, .fade-leave-to {
-//   opacity: 0;
-//   transform: translateX(-30%);
-// }
-
 </style>

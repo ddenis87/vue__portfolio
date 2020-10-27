@@ -11,9 +11,12 @@
 export default {
   name: 'Portfolio',
   created() {
-    // window.scrollTo(0,0);
-    // window.scrollBy(0,0);
-    // document.body.scrollTo(0,0);
+  },
+  beforeUnmount() { this.goTopPage() },
+  methods: {
+    goTopPage() {
+      window.scrollTo(0,0);
+    }
   },
 }
 </script>
@@ -27,7 +30,7 @@ export default {
   flex-wrap: wrap;
   max-width: 850px;
   width: 100%;
-  transition: all 1s;
+  transition: all .5s;
   &-card {
     margin: 10px 10px;
     padding: 0px;
@@ -50,11 +53,10 @@ export default {
 }
 .fade-enter-active {
   opacity: 0;
-  width: 0%;
   transition: all 0s;
 }
 .fade-enter {
   opacity: 0;
-  transition: all 1s;
+  // transition: all 1s;
 }
 </style>
