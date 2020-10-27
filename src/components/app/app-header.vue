@@ -3,9 +3,12 @@
     <h1 class="header__title">Frontend</h1>
     <div class="header__navigation">
       <ul class="menu">
-        <router-link class="menu__item" active-class="active" tag="li" to="/" exact="true">Главная</router-link>
+        <!-- <router-link class="menu__item" active-class="active" tag="li" to="/" exact="true">Главная</router-link>
         <router-link class="menu__item" active-class="active" tag="li" to="/portfolio">Портфолио</router-link>
-        <router-link class="menu__item" active-class="active" tag="li" to="/contact">Контакты</router-link>
+        <router-link class="menu__item" active-class="active" tag="li" to="/contact">Контакты</router-link> -->
+        <a href="#" @click.prevent="goRoute('/')"><li class="menu__item">Главная</li></a>
+        <a href="#" @click.prevent="goRoute('/portfolio')"><li class="menu__item">Портфолио</li></a>
+        <a href="#" @click.prevent="goRoute('/contact')"><li class="menu__item">Контакты</li></a>
       </ul>
     </div>
   </div>
@@ -14,6 +17,15 @@
 <script>
 export default {
   name: 'Header',
+  methods: {
+    goRoute(valueRouter) {
+      if (valueRouter == this.$route.path) return;
+      document.getElementById('page').classList.add('fade-enter');
+      setTimeout(() => {
+        this.$router.push(valueRouter);
+      }, 300);
+    }
+  }
 }
 </script>
 

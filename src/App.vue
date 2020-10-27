@@ -5,9 +5,11 @@
     </div>
     <!-- <div class="app-window">
       <app-window></app-window>
-    </div> -->
+    </div> -->   
     <div class="app-body">
-      <router-view/>
+            <transition name="fade" mode="out-in">
+      <router-view></router-view>
+         </transition>
     </div>
     <div class="app-footer">
       <app-footer></app-footer>
@@ -77,11 +79,25 @@ a {
     background-color: white; 
     box-sizing: border-box;
     transition: .5s;
+    z-index: 999;
     &_scroll { box-shadow: 0px 5px 20px grey; }
   }
   &-window { grid-area: app-window; display: flex; justify-content: center; }
-  &-body { grid-area: app-body; display: flex; justify-content: center; padding: 0px $bodyPaddingLR;}
+  &-body {
+    grid-area: app-body; 
+    display: flex; 
+    justify-content: center; 
+    padding: 0px $bodyPaddingLR;
+    z-index: 888;
+  }
   &-footer { grid-area: app-footer; display: flex; justify-content: center; background-color: whitesmoke;}
 }
+// .fade-enter-active, .fade-leave-active {
+//   transition: opacity 1s, transform 1s;
+// }
+// .fade-enter, .fade-leave-to {
+//   opacity: 0;
+//   transform: translateX(-30%);
+// }
 
 </style>

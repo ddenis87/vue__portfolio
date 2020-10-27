@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio">
+  <div class="portfolio" id="page">
     <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/hostel-min.png" /></div>
     <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/arch-min.png" /></div>
     <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/tyMarket-min.png" /></div>
@@ -9,7 +9,12 @@
 
 <script>
 export default {
-  name: 'Portfolio'
+  name: 'Portfolio',
+  created() {
+    // window.scrollTo(0,0);
+    // window.scrollBy(0,0);
+    // document.body.scrollTo(0,0);
+  },
 }
 </script>
 
@@ -22,7 +27,7 @@ export default {
   flex-wrap: wrap;
   max-width: 850px;
   width: 100%;
-  // border: 1px solid black;
+  transition: all 1s;
   &-card {
     margin: 10px 10px;
     padding: 0px;
@@ -42,5 +47,14 @@ export default {
       height: auto;
     }
   }
+}
+.fade-enter-active {
+  opacity: 0;
+  width: 0%;
+  transition: all 0s;
+}
+.fade-enter {
+  opacity: 0;
+  transition: all 1s;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="main">
+  <div class="main" id="page">
     <div class="app-window">
       <app-window></app-window>
     </div>
@@ -54,6 +54,11 @@ export default {
   computed: {
     listSkils() { return this.$store.getters.GET_LIST_SKILS }
   },
+  data() {
+    return {
+      isShow: false,
+    }
+  },
 }
 </script>
 
@@ -63,6 +68,7 @@ export default {
 .main {
   max-width: $widthMaxContent;
   width: 100%;
+  transition: all 1s;
   .app-window {
     height: $windowHeight;
   }
@@ -118,5 +124,14 @@ export default {
       }
     }
   }
+}
+.fade-enter-active {
+  opacity: 0;
+  // width: 0%;
+  transition: all 0s;
+}
+.fade-enter {
+  opacity: 0;
+  transition: all 1s;
 }
 </style>
