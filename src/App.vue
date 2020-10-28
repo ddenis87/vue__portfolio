@@ -4,7 +4,9 @@
       <app-header></app-header>
     </div>  
     <div class="app-body">
+      <!-- <router-view v-slot="{ Component }"></router-view> -->
     <transition name="page" mode="out-in">
+      <!-- <component :is="Component" /> -->
       <router-view></router-view>
     </transition>
     </div>
