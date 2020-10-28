@@ -32,6 +32,7 @@ export default {
   max-width: 380px;
   width: 100%;
   max-height: 280px;
+  min-height: 280px;
   height: 100%;
   overflow-y: hidden;
   border: 1px solid grey;

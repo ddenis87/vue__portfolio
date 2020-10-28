@@ -51,14 +51,9 @@ export default {
     MainProgress,
   },
   computed: {
-    listSkils() { return this.$store.getters.GET_LIST_SKILS }
+    listSkils() { return this.$store.getters.GET_LIST_SKILS; }
   },
-  beforeUnmount() { this.goTopPage() },
-  methods: {
-    goTopPage() {
-      window.scrollTo(0,0);
-    }
-  },
+  beforeUnmount() { window.scrollTo(0,0); },
 }
 </script>
 
@@ -69,6 +64,7 @@ export default {
   margin-bottom: 20px;
   max-width: $widthMaxContent;
   width: 100%;
+  color: $bodyTextColor;
   transition: all .3s;
   &__window {
     height: $windowHeight;
@@ -80,8 +76,7 @@ export default {
 
     font-family: 'Open sans';
     font-size: 1em;
-    color: $bodyColorText;
-
+    
     &_center { justify-content: center; }
     &-box {
       max-width: ($widthMaxContent - 40px) / 2;

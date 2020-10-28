@@ -62,7 +62,7 @@ a {
   width: 100%;
   box-sizing: border-box;
   font-family: 'Roboto';
-  font-size: $pageFontSize;
+  font-size: $pageTextSize;
 
   &-header {
     grid-area: app-header;
