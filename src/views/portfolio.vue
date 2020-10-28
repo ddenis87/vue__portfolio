@@ -1,16 +1,23 @@
 <template>
   <div class="portfolio" id="page">
-    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/hostel-min.png" /></div>
+    <!-- <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/hostel-min.png" /></div>
     <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/arch-min.png" /></div>
     <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/tyMarket-min.png" /></div>
-    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/psychologist-min.png" /></div>
+    <div class="portfolio-card"><img class="portfolio-card__images" src="@/assets/images/project/psychologist-min.png" /></div> -->
+    <portfolio-card v-for="(item, index) in listItem" :key="index" :cardItem="item"></portfolio-card>
   </div>
 </template>
 
 <script>
+import PortfolioCard from '@/components/portfolio__card';
+
 export default {
   name: 'Portfolio',
-  created() {
+  components: {
+    PortfolioCard,
+  },
+  computed: {
+    listItem() { return this.$store.getters.GET_LIST_PROJECT; },
   },
   beforeUnmount() { this.goTopPage() },
   methods: {
@@ -30,33 +37,14 @@ export default {
   flex-wrap: wrap;
   max-width: 850px;
   width: 100%;
-  transition: all .5s;
-  &-card {
-    margin: 10px 10px;
-    padding: 0px;
-    max-width: 400px;
-    width: 100%;
-    max-height: 300px;
-    height: 100%;
-    overflow-y: hidden;
-    border: 1px solid grey;
-    box-sizing: border-box;
-    transition: .3s;
-    &:hover {
-      padding: 10px;
-    }
-    &__images {
-      width: 100%;
-      height: auto;
-    }
-  }
+  margin: 20px 0px;
+  transition: all .3s;
 }
-.fade-enter-active {
+.page-enter-active {
   opacity: 0;
   transition: all 0s;
 }
-.fade-enter {
+.page-enter {
   opacity: 0;
-  // transition: all 1s;
 }
 </style>

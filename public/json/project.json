@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Кабинет психолога", 
+    "description": "Лендинг кабинета психолога. Сайт одностраничный, переход по пунктам меню осуществляется с использованием якорей. На странице размещена форма для обратной связи и предварительной записи.", 
+    "stek": "HTML, CSS", 
+    "imageSmall": "./assets/images/project/psychologist-min.png", 
+    "imageFull": "./assets/images/project/psychologist.png", 
+    "url": "", 
+    "urlGit": ""
+  },
+  {
+    "title": "Сайт застройщика", 
+    "description": "Сайт застройщика недвижимости, разработан по шаблону из Figma в рамках тестового задания.", 
+    "stek": "Vue js", 
+    "imageSmall": "./assets/images/project/arch-min.png", 
+    "imageFull": "./assets/images/project/arch.png", 
+    "url": "", 
+    "urlGit": ""
+  },
+  {
+    "title": "Отель", 
+    "description": "Верстка по шаблону из Figma. Проект разрабатывался во время прохождения одного из многочисленных курсов по Frontend - разработке.", 
+    "stek": "HTML, CSS", 
+    "imageSmall": "./assets/images/project/hostel-min.png", 
+    "imageFull": "./assets/images/project/hostel.png", 
+    "url": "", 
+    "urlGit": ""
+  },
+  {
+    "title": "Блок Интернет магазина TyMarket", 
+    "description": "Первый коммерческий проект. Модуль размещен на сайте новостного портала. Данные загружаются с сервера самого магазина ajax - запросом со стороны клиента.", 
+    "stek": "HTML, CSS, JS, JSON, AJAX", 
+    "imageSmall": "./assets/images/project/tyMarket-min.png", 
+    "imageFull": "./assets/images/project/tyMarket.png", 
+    "url": "", 
+    "urlGit": ""
+  }
+]

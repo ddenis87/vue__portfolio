@@ -69,7 +69,7 @@ export default {
   margin-bottom: 20px;
   max-width: $widthMaxContent;
   width: 100%;
-  transition: all .5s;
+  transition: all .3s;
   &__window {
     height: $windowHeight;
   }
@@ -126,13 +126,11 @@ export default {
     }
   }
 }
-.fade-enter-active {
+.page-enter-active {
   opacity: 0;
-  // width: 0%;
   transition: all 0s;
 }
-.fade-enter {
+.page-enter {
   opacity: 0;
-  // transition: all 1s;
 }
 </style>

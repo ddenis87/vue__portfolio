@@ -4,9 +4,9 @@
       <app-header></app-header>
     </div>  
     <div class="app-body">
-            <transition name="fade" mode="out-in">
+    <transition name="page" mode="out-in">
       <router-view></router-view>
-         </transition>
+    </transition>
     </div>
     <div class="app-footer">
       <app-footer></app-footer>
@@ -32,6 +32,7 @@ export default {
   created() {
     window.addEventListener('scroll', () => { (window.pageYOffset == 0) ? this.headerShadow = false : this.headerShadow = true; });
     this.$store.dispatch('SET_LIST_SKILS');
+    this.$store.dispatch('SET_LIST_PROJECT');
   },
 }
 </script>
