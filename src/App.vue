@@ -50,7 +50,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: grey;
+  color: $linkTextColor;
 }
 
 .app {

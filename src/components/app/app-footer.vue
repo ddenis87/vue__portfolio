@@ -6,15 +6,15 @@
       <hr class="footer__separator"/>
       <router-link class="footer__social_text" to="/contact">Форма обратной связи</router-link>
       <hr class="footer__separator"/>
-      <a href="https://api.whatsapp.com/send?phone=79098161268" target="_blank"><img src="@/assets/images/social/whatsapp.png" alt="" class="footer__social_images"></a>
+      <a href="https://api.whatsapp.com/send?phone=79098161268" target="_blank"><img src="@/assets/images/social/whatsapp.png" title="WhatsApp" class="footer__social_images"></a>
       <hr class="footer__separator"/>
-      <a href="https://t.me/DDenis87" target="_blank"><img src="@/assets/images/social/telegram.png" alt="" class="footer__social_images"></a>
+      <a href="https://t.me/DDenis87" target="_blank"><img src="@/assets/images/social/telegram.png" title="Telegram" class="footer__social_images"></a>
     </div>
     <h4 class="footer__title">Профиль</h4>
     <div class="footer__profile">
-      <a href="https://github.com/ddenis87" target="_blank"><img src="@/assets/images/social/github.png" alt="" class="footer__social_images"></a>
+      <a href="https://github.com/ddenis87" target="_blank"><img src="@/assets/images/social/github.png" title="Github" class="footer__social_images"></a>
       <hr class="footer__separator"/>
-      <img src="@/assets/images/social/vk.png" alt="" class="footer__social_images">
+      <img src="@/assets/images/social/vk.png" title="Vk" class="footer__social_images">
     </div>
     
   </div>

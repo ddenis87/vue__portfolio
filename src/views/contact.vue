@@ -8,7 +8,7 @@
         <label class=""><input class="contact-form__field" type="text" placeholder="Укажите Имя" v-model="formField.userName" ></label>
         <label class=""><input class="contact-form__field" type="text" placeholder="Email" v-model="formField.email"></label>
         <label class=""><input class="contact-form__field" type="text" placeholder="Номер телефона" v-model="formField.phone"></label>
-        <label class=""><textarea class="contact-form__field-text" rows="4" placeholder="Ваш вопрос" v-model="formField.quest"></textarea></label>
+        <label class=""><textarea class="contact-form__field contact-form__field-text" rows="4" placeholder="Ваш вопрос" v-model="formField.quest"></textarea></label>
         <div class="contact-form__control">
           <div class="status">
             <span class="status__text" :class="{'status__text-error': isError}">{{ statusText }}</span>
@@ -70,13 +70,18 @@ export default {
       }
       &__field-text {
         width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid darkslategray;
-        border-radius: 3px;
         box-sizing: border-box;
         resize: none;
+      }
+      &__button {
+        max-width: 120px;
+        width: 100%;
+        padding: 5px 15px;
+        border: 1px solid darkslategray;
+        background-color: whitesmoke;
         outline: none;
+        cursor: pointer;
+        &:hover { background-color: lightgray; }
       }
     }
   }
