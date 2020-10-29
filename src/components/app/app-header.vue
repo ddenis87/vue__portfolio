@@ -1,6 +1,12 @@
 <template>
   <div class="header">
-    <h1 class="header__title">DDA</h1>
+    <div>
+      <h1 class="header__title">
+        <span class="one">D</span>
+        <span class="two">D</span>
+        <span class="three">A</span>
+      </h1>
+    </div>
     <div class="header__navigation">
       <ul class="menu">
         <router-link class="menu__item" active-class="active" tag="li" @click.prevent="goRoute('/')" to="/" exact="true">Главная</router-link>
@@ -38,8 +44,13 @@ export default {
   background-color: white;
   &__title {
     display: inline-flex;
-    letter-spacing: .3em;
+    margin: 0px;
+    // letter-spacing: .3em;
     text-transform: uppercase;
+    color: darkslategray;
+    .one { transform: translate(0px, 8px); }
+    .two { transform: translate(-2px, -5px); }
+    .three { transform: translate(-24px, 20px); }
   }
   &__navigation {
     font-size: 1em;

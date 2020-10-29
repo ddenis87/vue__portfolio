@@ -4,15 +4,14 @@
       <app-header></app-header>
     </div>  
     <div class="app-body">
-      <!-- <router-view v-slot="{ Component }"></router-view> -->
     <transition name="page" mode="out-in">
-      <!-- <component :is="Component" /> -->
       <router-view></router-view>
     </transition>
     </div>
     <div class="app-footer">
       <app-footer></app-footer>
     </div>
+    <div class="app-copyright">Copyright by Dontsov D.A. 2020</div>
   </div>
 </template>
 
@@ -42,6 +41,7 @@ export default {
 <style lang="scss">
 @import 'fonts.scss';
 @import 'variable.scss';
+
 html { overflow-y: scroll; }
 html, body {
   margin: 0;
@@ -56,10 +56,12 @@ a {
 .app {
   position: relative;
   display: grid;
-  grid-template-areas: "app-header" "app-body" "app-footer";
-  grid-template-rows: $headerHeight auto $footerHeight;
+  grid-template-areas: "app-header" "app-body" "app-footer" "app-copyright";
+  grid-template-rows: $headerHeight auto $footerHeight 20px;
   grid-template-columns: 100%;
   width: 100%;
+  min-width: $widthMinContent;
+
   box-sizing: border-box;
   font-family: 'Roboto';
   font-size: $pageTextSize;
@@ -72,11 +74,12 @@ a {
     width: 100%;
     padding: 0px $headerPaddingLR;
     height: $headerHeight;
+    border-bottom: 1px solid whitesmoke;
     background-color: white; 
     box-sizing: border-box;
     transition: .5s;
     z-index: 999;
-    &_scroll { box-shadow: 0px 5px 20px grey; }
+    &_scroll { box-shadow: 0px 5px 20px grey; border-bottom: 1px solid white; }
   }
   &-body {
     grid-area: app-body; 
@@ -86,5 +89,14 @@ a {
     z-index: 888;
   }
   &-footer { grid-area: app-footer; display: flex; justify-content: center; background-color: whitesmoke;}
+  &-copyright { 
+    grid-area: app-copyright; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 0.6em;
+    color: grey;
+  }
 }
 </style>

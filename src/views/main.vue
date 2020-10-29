@@ -3,16 +3,16 @@
     <div class="main__window">
       <main-window></main-window>
     </div>
-    <div class="main-flex">
-      <div class="main-flex-box main-flex-box_first">
-        <h4 class="main-flex-box__title">Обо мне</h4>
-        <p class="main-flex-box__text">Привет, меня зовут Денис Донцов мне 33 и я занимаюсь Frontend разработкой. Сейчас я работаю в сфере защиты информации попутно разрабатывая и внедряя 
+    <div class="main__body">
+      <div class="body-item body-item_left">
+        <h4 class="body-item__title">Обо мне</h4>
+        <p class="body-item__text">Привет, меня зовут Денис Донцов мне {{ (new Date().getFullYear() - new Date('10/03/1987').getFullYear()) }} и я занимаюсь Frontend разработкой. Сейчас я работаю в сфере защиты информации попутно разрабатывая и внедряя 
           небольшие решения для автоматизации рабочих процессов.</p> 
-        <p class="main-flex-box__text">Почему Front-end? Наверное потому, что приятно видеть открытые приложения разработанные тобой, видеть что люди пользуются твоими решениями, видеть результат своей работы.
+        <p class="body-item__text">Почему Frontend? Наверное потому, что приятно видеть открытые приложения разработанные тобой, видеть что люди пользуются твоими решениями, видеть результат своей работы.
           Порой увлекшись процессом разработки забываешь что людям иногда надо есть, спать (придумал же кто-то). Время отдыха предпочитаю проводить с пользой, пешие прогулки, велопрогулки, роликовые коньки, бассейн.</p>
       </div>
-      <div class="main-flex-box">
-        <h4 class="main-flex-box__title">Образование</h4>
+      <div class="body-item body-item_right">
+        <h4 class="body-item__title">Образование</h4>
         <ul class="list">
           <li class="list__item">Благовещенский Государственный Педагогический Университет</li>
           <ul class="list-sub">
@@ -30,11 +30,11 @@
         </ul>
       </div>
     </div>
-    <div class="main-flex main-flex_center">
-      <div class="main-flex-box">
-        <h4 class="main-flex-box__title">Навыки</h4>
-        <p class="main-flex-box__text">На сегодняшний день, моей целью является дальнейшее развитие имеющихся навыков и изучение новых.</p>
-        <main-progress class="main-flex-box__progress" v-for="(item, index) in listSkils" :listProperties="item" :key="index"></main-progress>
+    <div class="main__body main__body_center">
+      <div class="body-item">
+        <h4 class="body-item__title">Навыки</h4>
+        <p class="body-item__text">На сегодняшний день, моей целью является дальнейшее развитие имеющихся навыков и изучение новых.</p>
+        <main-progress class="body-item__progress" v-for="(item, index) in listSkils" :listProperties="item" :key="index"></main-progress>
       </div>
     </div>
   </div>
@@ -59,6 +59,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~@/variable.scss';
+@import 'animation-router.scss';
 
 .main {
   margin-bottom: 20px;
@@ -66,22 +67,20 @@ export default {
   width: 100%;
   color: $bodyTextColor;
   transition: all .3s;
-  &__window {
-    height: $windowHeight;
-  }
-  &-flex {
+  &__window { height: $windowHeight; }
+  &__body {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     flex-wrap: nowrap;
-
     font-family: 'Open sans';
     font-size: 1em;
-    
     &_center { justify-content: center; }
-    &-box {
+    .body-item {
       max-width: ($widthMaxContent - 40px) / 2;
+      min-width: 400px;
       width: 100%;
-      &_first { margin-right: 40px; }
+      &_left { margin-right: 10px; }
+      &_right { margin-left: 10px; }
       &__title {
         text-align: center;
         text-transform: uppercase;
@@ -91,15 +90,10 @@ export default {
         text-indent: 25px;
         text-align: justify;
       }
-      &__progress {
-        margin-bottom: 10px;
-      }
       .list {
         margin-bottom: 10px;
         padding: 0px;
-        &__item {
-          list-style: none; 
-        }
+        &__item { list-style: none; }
         &-sub {
           padding-left: 18px;
           &__item {
@@ -121,11 +115,15 @@ export default {
     }
   }
 }
-.page-enter-active {
-  opacity: 0;
-  transition: all 0s;
-}
-.page-enter {
-  opacity: 0;
+@media screen and (max-width: 860px) {
+  .main {
+    &__body {
+      justify-content: center;
+      flex-wrap: wrap;
+      .body-item {
+        &_left, &_right { margin: 0px; }
+      }
+    }
+  }
 }
 </style>
