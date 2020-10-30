@@ -20,7 +20,9 @@ export default {
   name: 'PortfolioCard',
   props: {
     cardItem: Object,
-  }
+  },
+  created() {
+  },
 }
 </script>
 

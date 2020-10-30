@@ -1,7 +1,7 @@
 <template>
   <div class="contact" id="page">
     <h4 class="contact__title">Контакты</h4>
-    <p class="contact__text">Если у вас возникли вопросы, можете связаться со мной одним из способов представленных в низу страницы, или заполнить форму и я свяжусь с вами.</p>
+    <p class="contact__text">Если у вас возникли вопросы, можете связаться со мной одним из способов, представленных внизу страницы, или заполнить форму и я свяжусь с вами.</p>
     <div class="contact__body">
       <form class="contact-form">
         <label class=""><input class="contact-form__field" type="text" placeholder="Имя" v-model="formField.userName" ></label>
