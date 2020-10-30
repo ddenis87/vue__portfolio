@@ -5,10 +5,16 @@
     <p class="portfolio__text">Большинство проектов над которыми работал, представляют из себя приложения для работы профильных специалистов при работе с базами данных. Они имеют специфический функционал и не особо нуждаются в дизайне (более значима функциональная часть), а потому не представлены здесь.</p>
     <p class="portfolio__text">Здесь представлены проекты которые были сделаны в ходе обучения и в качестве тестовых заданий. Один из представленных проектов (последний) является коммерческим, и можно сказать первым в направлении Frontend.</p>
     <div class="portfolio__body">
-      <portfolio-card v-for="(item, index) in listItem" :key="index" :cardItem="item" @card-zoom="cardZoom"></portfolio-card>
+      <portfolio-card v-for="(item, index) in listItem" 
+                      :key="index" 
+                      :cardItem="item" 
+                      @card-zoom="cardZoom"></portfolio-card>
     </div>
   </div>
-  <portfolio-zoom class="body-router__zoom" :class="{'body-router__zoom_show': zoomVisibility}" :imagesUrl="zoomImagesUrl" @card-close="() => { zoomVisibility = false; }"></portfolio-zoom>
+  <portfolio-zoom class="body-router__zoom" 
+                  :class="{'body-router__zoom_show': zoomVisibility}" 
+                  :imagesUrl="zoomImagesUrl" 
+                  @card-close="() => { zoomImagesUrl = ''; zoomVisibility = false; }"></portfolio-zoom>
 </div>
 </template>
 
@@ -36,7 +42,7 @@ export default {
     cardZoom(url) {
       this.zoomImagesUrl = url;
       this.zoomVisibility = true;
-    }
+    },
   }
 }
 </script>
@@ -44,7 +50,7 @@ export default {
 <style lang="scss" scoped>
 @import '~@/variable.scss';
 @import 'animation-router.scss';
-$widthMaxZoom: ($widthMaxContent / 2);
+$widthMaxZoom: 90%;
 
 .body-router{
   position: relative;

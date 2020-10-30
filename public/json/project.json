@@ -6,7 +6,7 @@
     "imagesSmall": "./assets/images/project/psychologist-min.png", 
     "imagesFull": "./assets/images/project/psychologist.png", 
     "url": "", 
-    "urlGit": ""
+    "urlGit": "https://github.com/ddenis87/hcj--psychologist"
   },
   {
     "title": "Сайт застройщика", 
@@ -15,7 +15,7 @@
     "imagesSmall": "./assets/images/project/arch-min.png", 
     "imagesFull": "./assets/images/project/arch.png", 
     "url": "", 
-    "urlGit": ""
+    "urlGit": "https://github.com/ddenis87/vuej__mst-arch/tree/master/developer"
   },
   {
     "title": "Отель", 
@@ -24,7 +24,7 @@
     "imagesSmall": "./assets/images/project/hostel-min.png", 
     "imagesFull": "./assets/images/project/hostel.png", 
     "url": "", 
-    "urlGit": ""
+    "urlGit": "https://github.com/ddenis87/hcj--hostel"
   },
   {
     "title": "Блок Интернет магазина TyMarket", 
@@ -33,6 +33,6 @@
     "imagesSmall": "./assets/images/project/tyMarket-min.png", 
     "imagesFull": "./assets/images/project/tyMarket.png", 
     "url": "", 
-    "urlGit": ""
+    "urlGit": "https://github.com/ddenis87/hcj--tvs-media"
   }
 ]

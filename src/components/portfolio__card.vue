@@ -9,7 +9,8 @@
       
     </div>
     <div class="card__control">
-      <img src="@/assets/images/github-black.png" alt="" class="card__control_images"/>
+      <div><a :href="cardItem.urlGit" target="_blank" v-if="cardItem.urlGit"><img src="@/assets/images/github-black.png" alt="" class="card__control_images"/></a></div>
+      <div><a :href="cardItem.url" target="_blank" v-if="cardItem.url"><img src="@/assets/images/link.png" alt="" class="card__control_images"/></a></div>
       <img src="@/assets/images/enlarge.png" alt="" class="card__control_images" @click="$emit('card-zoom', cardItem.imagesFull)"/>
     </div>
   </div>
@@ -20,8 +21,6 @@ export default {
   name: 'PortfolioCard',
   props: {
     cardItem: Object,
-  },
-  created() {
   },
 }
 </script>

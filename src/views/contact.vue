@@ -1,7 +1,7 @@
 <template>
   <div class="contact" id="page">
     <h4 class="contact__title">Контакты</h4>
-    <p class="contact__text">Если у вас возникли вопросы, можете связаться со мной одним из способов, представленных внизу страницы, или заполнить форму и я свяжусь с вами.</p>
+    <p class="contact__text">Если у вас возникли вопросы, можете связаться со мной одним из способов, представленных внизу страницы, или заполнить форму, и я свяжусь с вами.</p>
     <div class="contact__body">
       <form class="contact-form">
         <label class=""><input class="contact-form__field" type="text" placeholder="Имя" v-model="formField.userName" ></label>
@@ -19,8 +19,13 @@
 </template>
 
 <script>
+import nProgress from 'nprogress';
+
 export default {
   name: 'Contact',
+  components: {
+    nProgress,
+  },
   data() {
     return {
       formField: {userName: '', email: '', phone: '', quest: '', clear: function() {this.userName = ''; this.email = ''; this.phone = ''; this.quest = '';}},
@@ -31,6 +36,7 @@ export default {
   methods: {
     sendMail: function(event) {
       this.isLoad = true;
+      nProgress.start();
       let formSend = new FormData();
       formSend.set('userName', this.formField.userName);
       formSend.set('email', this.formField.email);
@@ -42,17 +48,20 @@ export default {
       req.onreadystatechange = () => {
         if (req.readyState !== XMLHttpRequest.DONE) {
           this.isLoad = false;
+          nProgress.done();
           this.statusText = 'Ошибка, попробуйте позже или свяжитесь со мной иным способом.'; 
           setTimeout(() => {this.statusText = '';}, 5000); 
           return;
         }
         if (req.status === 200) {
           this.isLoad = false;
+          nProgress.done();
           this.statusText = 'Контакты и вопрос отправлены. В ближайшее время я свяжусь с Вами.'
           setTimeout(() => {this.statusText = '';}, 5000);
           this.formField.clear();
         } else {
           this.isLoad = false;
+          nProgress.done();
           this.statusText = 'Ошибка, попробуйте позже или свяжитесь со мной иным способом.';
           setTimeout(() => {this.statusText = '';}, 5000);
         }

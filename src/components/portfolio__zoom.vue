@@ -1,17 +1,34 @@
 <template>
   <div class="zoom">
-    <img :src="imagesUrl" alt="" class="zoom__images" :class="{'zoom__images_visibility': isVisibility}" id="fullimages"/>
+    <img :src="url" 
+         alt="" 
+         class="zoom__images" 
+         :class="{'zoom__images_visibility': isVisibility}" 
+         id="fullimages" 
+         @blur="{ isVisibility = false; $emit('card-close'); }" 
+         tabindex="-1"/>
     <div class="zoom__control">
-      <img class="control__images" src="@/assets/images/close.png" title="Закрыть" alt="" @click="() => { isVisibility = false; $emit('card-close'); }">
+      <img class="control__images" 
+           src="@/assets/images/close.png" 
+           title="Закрыть" 
+           alt=""/>
     </div>
   </div>
 </template>
 
 <script>
+import nProgress from 'nprogress';
+
 export default {
   name: 'PortfolioZoom',
+  components: {
+    nProgress,
+  },
   props: {
     imagesUrl: String,
+  },
+  computed: {
+    url() { if(this.imagesUrl) { nProgress.start(); document.getElementById('fullimages').focus(); this.isVisibility = true; } return this.imagesUrl; },
   },
   data() {
     return {
@@ -21,8 +38,9 @@ export default {
   mounted() {
     let fullImages = document.getElementById('fullimages');
     fullImages.addEventListener('load', () => {
-        this.isVisibility = true;
-      })
+      this.isVisibility = true;
+      nProgress.done();
+    });
   },
 }
 </script>
@@ -35,7 +53,7 @@ export default {
   &__images {
     width: 100%;
     opacity: 0;
-    transition: opacity .3s;
+    transition: opacity .5s;
     &_visibility { opacity: 1; }
   }
   &__control {
