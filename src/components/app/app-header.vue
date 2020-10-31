@@ -9,9 +9,9 @@
     </div>
     <div class="header__navigation">
       <ul class="menu">
-        <router-link class="menu__item" active-class="active" tag="li" @click.prevent="goRoute('/')" to="/" exact="true">Главная</router-link>
-        <router-link class="menu__item" active-class="active" tag="li" @click.prevent="goRoute('/portfolio')" to="/portfolio">Портфолио</router-link>
-        <router-link class="menu__item" active-class="active" tag="li" @click.prevent="goRoute('/contact')" to="/contact">Контакты</router-link>
+        <li class="menu__item"><router-link active-class="active" @click.prevent="goRoute('/')" to="/" exact="true">Главная</router-link></li>
+        <li class="menu__item"><router-link active-class="active" @click.prevent="goRoute('/portfolio')" to="/portfolio">Портфолио</router-link></li>
+        <li class="menu__item"><router-link active-class="active" @click.prevent="goRoute('/contact')" to="/contact">Контакты</router-link></li>
       </ul>
     </div>
   </div>
@@ -45,7 +45,6 @@ export default {
   &__title {
     display: inline-flex;
     margin: 0px;
-    // letter-spacing: .3em;
     text-transform: uppercase;
     color: darkslategray;
     .one { transform: translate(0px, 8px); }
