@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Кабинет психолога", 
+    "description": "Лендинг кабинета психолога. Сайт одностраничный, переход по пунктам меню осуществляется с использованием якорей. На странице размещена форма для обратной связи и предварительной записи.", 
+    "stek": "HTML, CSS", 
+    "imagesSmall": "./assets/images/project/psychologist-min.png", 
+    "imagesFull": "./assets/images/project/psychologist.png", 
+    "url": "", 
+    "urlGit": "https://github.com/ddenis87/hcj--psychologist"
+  },
+  {
+    "title": "Сайт застройщика", 
+    "description": "Сайт застройщика недвижимости, разработан по шаблону из Figma в рамках тестового задания.", 
+    "stek": "Vue js", 
+    "imagesSmall": "./assets/images/project/arch-min.png", 
+    "imagesFull": "./assets/images/project/arch.png", 
+    "url": "", 
+    "urlGit": "https://github.com/ddenis87/vuej__mst-arch/tree/master/developer"
+  },
+  {
+    "title": "Отель", 
+    "description": "Верстка по шаблону из Figma. Проект разрабатывался во время прохождения одного из многочисленных курсов по Frontend - разработке.", 
+    "stek": "HTML, CSS", 
+    "imagesSmall": "./assets/images/project/hostel-min.png", 
+    "imagesFull": "./assets/images/project/hostel.png", 
+    "url": "", 
+    "urlGit": "https://github.com/ddenis87/hcj--hostel"
+  },
+  {
+    "title": "Блок Интернет магазина TyMarket", 
+    "description": "Первый коммерческий проект. Модуль размещен на сайте новостного портала. Данные загружаются с сервера самого магазина ajax - запросом со стороны клиента.", 
+    "stek": "HTML, CSS, JS, JSON, AJAX", 
+    "imagesSmall": "./assets/images/project/tyMarket-min.png", 
+    "imagesFull": "./assets/images/project/tyMarket.png", 
+    "url": "", 
+    "urlGit": "https://github.com/ddenis87/hcj--tvs-media"
+  }
+]
