@@ -1,11 +1,12 @@
 <template>
   <div class="header">
     <div>
-      <h1 class="header__title">
+      <h1 class="header__title">&lt; DDA /&gt;</h1>
+      <!-- <h1 class="header__title">
         <span class="one">D</span>
         <span class="two">D</span>
         <span class="three">A</span>
-      </h1>
+      </h1> -->
     </div>
     <div class="header__navigation">
       <ul class="menu">
@@ -47,9 +48,9 @@ export default {
     margin: 0px;
     text-transform: uppercase;
     color: darkslategray;
-    .one { transform: translate(0px, 8px); }
-    .two { transform: translate(-2px, -5px); }
-    .three { transform: translate(-24px, 20px); }
+    // .one { transform: translate(0px, 8px); }
+    // .two { transform: translate(-2px, -5px); }
+    // .three { transform: translate(-24px, 20px); }
   }
   &__navigation {
     font-size: 1em;
