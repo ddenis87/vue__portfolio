@@ -1,11 +1,12 @@
 [
   {"title": "HTML", "img": "html.png", "progress": 50},
   {"title": "CSS", "img": "css.png", "progress": 50},
-  {"title": "JavaScript", "img": "js.jpg", "progress": 40},
-  {"title": "VUE JS", "img": "vue.png", "progress": 40},
-  {"title": "Pug", "img": "pug.png", "progress": 20},
-  {"title": "Sass", "img": "sass.png", "progress": 20},
-  {"title": "Webpack", "img": "webpack.png", "progress": 20},
+  {"title": "JavaScript", "img": "js.jpg", "progress": 50},
+  {"title": "VUE JS", "img": "vue.png", "progress": 45},
+  {"title": "Jest", "img": "jest.png", "progress": 40},
+  {"title": "Sass", "img": "sass.png", "progress": 40},
+  {"title": "Pug", "img": "pug.png", "progress": 30},
+  {"title": "Webpack", "img": "webpack.png", "progress": 30},
   {"title": "PHP", "img": "php.png", "progress": 20},
   {"title": "Oracle (PL/SQL)", "img": "oracle.png", "progress": 20}
 ]
