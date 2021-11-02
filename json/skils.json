@@ -1,7 +1,7 @@
 [
   {"title": "HTML", "img": "html.png", "progress": 50},
   {"title": "CSS", "img": "css.png", "progress": 50},
-  {"title": "JavaScript", "img": "js.jpg", "progress": 50},
+  {"title": "JavaScript", "img": "js.jpg", "progress": 55},
   {"title": "VUE JS", "img": "vue.png", "progress": 55},
   {"title": "Jest", "img": "jest.png", "progress": 30},
   {"title": "Pug", "img": "pug.png", "progress": 20},
